@@ -1,0 +1,48 @@
+ <script>
+      $( document ).ready(function() {
+        if ($(window).width() >=800 ) {
+          setInterval(myGreeting, 100);
+        }else{
+          setInterval(Greeting, 100);
+        }
+
+      });
+
+      function myGreeting(){
+
+
+        if ($(".ks-calculator-element .element-label label").text()!= ""){
+          $(".select-element select").change(function(){
+            $("#ProductSelect-option-1 label").each(function(i, obj){
+              console.log($(this).text());
+              if($(this).text() == $(".formula-text").text()){
+                $(this).click();
+              }
+            });
+
+          });
+          clearInterval(myGreeting, 100);
+        }else{
+          clearInterval(myGreeting, 100);
+        }
+
+      }
+
+      function Greeting(){
+        if ($(".ks-calculator-element .element-label label").text()!= ""){
+
+          $(".ks-calculator-container-content select").change(function(){
+            $("#ProductSelect-option-1 label").each(function(i, obj){
+              if($(this).text() == $(".formula-text").text()){
+                $(this).click();
+
+              }
+            });
+
+          }); 
+          clearInterval(Greeting, 100);
+        }else{
+          clearInterval(Greeting, 100);
+        }
+      }
+    </script>
